@@ -67,20 +67,77 @@
                 <div class="col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            // Call HelloWorld
-                            function HelloWorld(){
-                                alert("Hello World");
+                            // get the string from the page
+                            function getValues(){
+
+                                // add class invisible to the alert box at the beginning
+                                document.getElementById("alert").classList.add("invisible");
+
+                                // get the entered string
+                                let userString = document.getElementById("userString").value;
+
+                                // backtrack the input string
+                                let reverseString = backtrackString(userString);
+
+                                // display the backtrack string
+                                displayBacktrackString(reverseString);
                             }
+
+
+                            // backtrack the string
+                            function backtrackString(userString){
+                                let backtrackString = "";
+
+                                // loop to backtrack String
+                                for(let i = 0 ; i < userString.length; i++){
+                                    backtrackString = userString[i] + backtrackString;
+                                }
+
+                                return backtrackString;
+                            }
+
+
+                            // display the backtrack string in the UI
+                            function displayBacktrackString(backtrackString){
+                                // getting the "msg" id, to display the message
+                                document.getElementById("msg").innerHTML = `Your BACKTRACK string = ${backtrackString}`;
+
+                                // Making the alert "visible"
+                                document.getElementById("alert").classList.remove("invisible");
+                            }
+
                         </code>
                     </pre>
+
+                    <hr class="mb-2 bg-danger">
                 </div>
 
                 <!-- DESCRIPTION -->
                 <div class="col-lg-4">
                     <p>The code is strucutred in the box and next to it is the description of the code.</p>
 
-                    <h5>Hello World</h5>
-                    <p>Hello world is afunction that displays an alert generated "Hello World" whenever this function is called.</p>
+                    <hr class="mb-2 bg-danger">
+
+                    <h5>Function: getValues</h5>
+                    <p>
+                        This function is responsible to being the main execution of the BACKTRACK idea. It first gets the user string from the UI via DOM manipulation and then calls a function "backtrackString" to get a backtracked string, which is then displayed on the UI through the alert box again via DOM manipulation.
+                    </p>
+
+                    <hr class="bg-danger">
+
+                    <h5>Function: backtrackString</h5>
+                    <p>
+                        This function is responsible for backtracking the input string and then returning the baktrack string to the calling function.
+                    </p>
+
+                    <hr class="bg-danger">
+
+                    <h5>Function: backtrackString</h5>
+                    <p>
+                        This function is responsible for backtracking the input string and then returning the baktrack string to the calling function.
+                    </p>
+
+                    <hr class="bg-danger">
 
                 </div>
            </div>
