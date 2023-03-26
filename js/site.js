@@ -1,12 +1,16 @@
 // get the string from the page
 function getValues(){
 
+    // add class invisible to the alert box at the beginning
     document.getElementById("alert").classList.add("invisible");
 
+    // get the entered string
     let userString = document.getElementById("userString").value;
 
+    // backtrack the input string
     let reverseString = backtrackString(userString);
 
+    // display the backtrack string
     displayBacktrackString(reverseString);
 }
 
