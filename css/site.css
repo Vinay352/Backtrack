@@ -13,6 +13,17 @@ nav{
     background-color: var(--dark-color);
 }
 
+.backtrackApp{
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.backtrackApp:hover{
+    border: 1px solid var(--primary-color);
+    background-color: white;
+    color: var(--primary-color);
+}
+
 footer{
     background-color: var(--dark-color);
 }
